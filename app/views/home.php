@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="<?= htmlentities($lang ?? 'en') ?>" dir="<?= htmlentities($dir ?? 'ltr') ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -54,6 +54,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="mt-4">
+                    <p class="text-muted text-center">
+                        <small>Current language: <strong><?= htmlentities($lang ?? 'en') ?></strong> | Direction: <strong><?= htmlentities($dir ?? 'ltr') ?></strong></small>
+                    </p>
                 </div>
             </div>
         </div>

@@ -50,3 +50,20 @@ if (!function_exists('env')) {
         return $_ENV[$key] ?? $default;
     }
 }
+
+// Helper to get text direction based on language
+if (!function_exists('getDirection')) {
+    function getDirection(string $lang = null): string
+    {
+        $lang = $lang ?? env('DEFAULT_LANG', 'en');
+        return in_array($lang, ['fa', 'ar', 'ur', 'he']) ? 'rtl' : 'ltr';
+    }
+}
+
+// Helper to get current language
+if (!function_exists('getCurrentLang')) {
+    function getCurrentLang(): string
+    {
+        return $_GET['lang'] ?? $_SESSION['lang'] ?? env('DEFAULT_LANG', 'en');
+    }
+}

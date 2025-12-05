@@ -1,9 +1,24 @@
-/* Librava custom styles */
+/* Librava custom styles - RTL/LTR compatible */
 
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --light-bg: #ecf0f1;
+}
+
+/* Support both LTR and RTL */
+html {
+    font-size: 16px;
+}
+
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
 }
 
 body {
@@ -12,6 +27,7 @@ body {
     color: #333;
 }
 
+/* Navbar styles with logical properties */
 .navbar {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -19,18 +35,44 @@ body {
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
-    margin-right: 1rem;
+    margin-inline-end: 1rem; /* Works for both RTL and LTR */
 }
 
-h1, h2, h3 {
+.navbar-text {
+    margin-inline-start: auto; /* Push to right in LTR, left in RTL */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-block-end: 1rem; /* Replaces margin-bottom */
 }
 
+/* Cards */
 .card {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     border: none;
-    margin-bottom: 1.5rem;
+    margin-block-end: 1.5rem; /* Replaces margin-bottom */
+    padding-inline: 1rem; /* Replaces padding-left/right */
+}
+
+.card-header {
+    padding-block: 0.75rem; /* Replaces padding-top/bottom */
+    padding-inline: 1.25rem; /* Replaces padding-left/right */
+}
+
+.card-body {
+    padding-inline: 1.25rem; /* Replaces padding-left/right */
+}
+
+.card-title {
+    margin-block-end: 0.75rem; /* Replaces margin-bottom */
+}
+
+/* Buttons */
+.btn {
+    padding-inline: 1rem; /* Replaces padding-left/right */
+    margin-inline-end: 0.5rem; /* Space between inline buttons */
 }
 
 .btn-primary {
@@ -43,12 +85,126 @@ h1, h2, h3 {
     border-color: #2980b9;
 }
 
-footer {
-    margin-top: auto;
+/* Alert boxes */
+.alert {
+    padding-block: 0.75rem; /* Replaces padding-top/bottom */
+    padding-inline: 1.25rem; /* Replaces padding-left/right */
+    margin-block-end: 1rem; /* Replaces margin-bottom */
 }
 
+/* Lists */
+ul, ol {
+    padding-inline-start: 2rem; /* Replaces padding-left (auto-reverses in RTL) */
+    margin-block-end: 1rem; /* Replaces margin-bottom */
+}
+
+li {
+    margin-block-end: 0.5rem; /* Replaces margin-bottom */
+}
+
+/* Code elements */
+code {
+    background-color: #f4f4f4;
+    padding-inline: 0.4rem; /* Replaces padding-left/right */
+    border-radius: 3px;
+    color: #d63384;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-block-end: 1rem; /* Replaces margin-bottom */
+    direction: ltr; /* Code is always LTR */
+}
+
+/* Footer */
+footer {
+    margin-block-start: auto; /* Replaces margin-top */
+    padding-block: 1rem; /* Replaces padding-top/bottom */
+}
+
+/* Containers and rows */
+.container, .container-fluid {
+    padding-inline: 1rem; /* Replaces padding-left/right */
+}
+
+.row {
+    margin-inline: -0.5rem; /* Negative margin for gutters */
+}
+
+.col-md-6, .col-md-8, .offset-md-2 {
+    padding-inline: 0.5rem; /* Replaces padding-left/right */
+}
+
+/* Utility classes for bidirectional text */
+.text-start {
+    text-align: start; /* Aligns to start in LTR, end in RTL */
+}
+
+.text-end {
+    text-align: end; /* Aligns to end in LTR, start in RTL */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Margin and padding utilities */
+.mt-1, .mt-2, .mt-3, .mt-4, .mt-5 {
+    margin-block-start: var(--spacing); /* Block start (top in LTR) */
+}
+
+.mb-1, .mb-2, .mb-3, .mb-4, .mb-5 {
+    margin-block-end: var(--spacing); /* Block end (bottom in LTR) */
+}
+
+.ms-1, .ms-2, .ms-3 {
+    margin-inline-start: var(--spacing); /* Inline start (left in LTR, right in RTL) */
+}
+
+.me-1, .me-2, .me-3 {
+    margin-inline-end: var(--spacing); /* Inline end (right in LTR, left in RTL) */
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .container, .container-fluid {
+        padding-inline: 0.75rem;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Smooth scrolling */
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
     }
 }
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+    }
+
+    code {
+        background-color: #2d2d2d;
+        color: #ff7b72;
+    }
+
+    pre {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+    }
+}
+
