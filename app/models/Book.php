@@ -8,11 +8,11 @@ class Book extends Model
 {
     public static function all()
     {
-        return parent::all('books');
+        return parent::all();
     }
 
     public static function findById(int $id)
     {
-        return parent::findById('books', $id);
+        return parent::findById($id);
     }
 }

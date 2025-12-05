@@ -41,13 +41,27 @@ class Model
 
     public static function all(string $table)
     {
+        if (empty($table)) {
+            $table = static::inferTable();
+        }
         $stmt = self::query("SELECT * FROM $table");
         return $stmt->fetchAll();
     }
 
-    public static function findById(string $table, int $id)
+    public static function findById(int $id, string $table = null)
     {
+        if (empty($table)) {
+            $table = static::inferTable();
+        }
         $stmt = self::query("SELECT * FROM $table WHERE id = ?", [$id]);
         return $stmt->fetch();
+    }
+
+    protected static function inferTable(): string
+    {
+        $called = get_called_class();
+        $parts = explode('\\\\', $called);
+        $short = end($parts);
+        return strtolower($short) . 's';
     }
 }
