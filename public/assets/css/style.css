@@ -208,3 +208,106 @@ footer {
     }
 }
 
+/* Theme class for manual dark toggling */
+body.theme-dark {
+    background-color: #0f1720;
+    color: #e6eef6;
+}
+
+body.theme-dark .card {
+    background-color: #11151a;
+    color: #e6eef6;
+}
+
+/* Settings panel and backdrop */
+.settings-panel {
+    position: fixed;
+    top: 72px;
+    inset-inline-end: 1rem; /* right in LTR, left in RTL will override */
+    width: 320px;
+    max-width: calc(100% - 2rem);
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    transform: translateX(110%);
+    transition: transform .28s cubic-bezier(.2,.9,.2,1), opacity .2s linear;
+    opacity: 0;
+    z-index: 1050;
+    overflow: hidden;
+}
+
+/* When in RTL, anchor panel to left and slide from left */
+html[dir="rtl"] .settings-panel {
+    inset-inline-start: 1rem;
+    inset-inline-end: auto;
+    transform: translateX(-110%);
+}
+
+.settings-panel.open {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    background: linear-gradient(90deg, rgba(52,152,219,0.06), rgba(44,62,80,0.03));
+}
+
+.settings-body {
+    padding: 1rem;
+}
+
+.settings-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1040;
+}
+
+/* Floating controls */
+#settingsToggle {
+    cursor: pointer;
+}
+
+#backBtn {
+    min-width: 36px;
+}
+
+/* Animations */
+.fade-in-up {
+    animation: fadeUp .36s ease both;
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(8px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn .28s ease both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Small responsive adjustments */
+@media (max-width: 576px) {
+    .settings-panel { width: 95%; top: 56px; }
+    .navbar-brand { font-size: 1.1rem; }
+    .navbar-text { display: none; }
+    #backBtn { display: inline-block; }
+}
+
+/* Accessibility focus styles */
+:focus {
+    outline: 3px solid rgba(52,152,219,0.25);
+    outline-offset: 2px;
+}
+
+
