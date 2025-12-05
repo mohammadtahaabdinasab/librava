@@ -1,0 +1,11 @@
+{
+  "name": "mohammadtahaabdinasab/librava",
+  "description": "Librava - Multilingual PHP MVC Library Management System",
+  "type": "project",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Core\\": "core/"
+    }
+  }
+}

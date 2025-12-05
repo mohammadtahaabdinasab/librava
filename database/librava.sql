@@ -1,0 +1,12 @@
+-- Minimal SQL schema skeleton for Librava
+
+CREATE DATABASE IF NOT EXISTS `librava` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `librava`;
+
+CREATE TABLE IF NOT EXISTS `books` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `title` VARCHAR(255) NOT NULL,
+  `author` VARCHAR(255) DEFAULT NULL,
+  `published_year` INT DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,21 +1,62 @@
-# the composer package lock file and install directory
-# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# /composer.lock
-/fuel/vendor
+(# Librava - tailored .gitignore for a PHP MVC app)
 
-# the fuelphp document
-/docs/
+# Environment files (keep example files like .env.example)
+.env
+.env.local
 
-# you may install these packages with `oil package`.
-# http://fuelphp.com/docs/packages/oil/package.html
-# /fuel/packages/auth/
-# /fuel/packages/email/
-# /fuel/packages/oil/
-# /fuel/packages/orm/
-# /fuel/packages/parser/
+# Composer / PHP
+/vendor/
+composer.phar
+*.phar
 
-# dynamically generated files
-/fuel/app/logs/*/*/*
-/fuel/app/cache/*/*
-/fuel/app/config/crypt.php
+# Node packages (if using npm/yarn for asset building)
+/node_modules/
+
+# Logs, cache, uploads
+/storage/logs/
+/storage/cache/
+/storage/uploads/
+/storage/*.log
+
+# Public uploaded files (if uploads stored under public/uploads)
+/public/uploads/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+
+# PHPUnit / testing
+.phpunit.result.cache
+coverage/
+
+# Build / distribution
+/build/
+/dist/
+
+# Temporary files
+*.log
+*.tmp
+
+# OS-generated files
+ehthumbs.db
+Icon?
+
+# Ignore sensitive/private keys and certs
+*.key
+*.pem
+
+# Optional: ignore SQLite DB files if used locally
+*.sqlite
+*.sqlite3
+
+# End of .gitignore
+
