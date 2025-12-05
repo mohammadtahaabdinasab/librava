@@ -1,16 +1,17 @@
 name: Security Scan
 
 on:
-  schedule:
-    - cron: "0 0 * * 1"
-  push:
   pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
 
 jobs:
   dependency-review:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Dependency Review
