@@ -1,7 +1,6 @@
-# 📚 **Librava -- Multilingual PHP MVC Library Management System**
+# 📚 **Librava - Multilingual PHP MVC Library Management System**
 
-A fully modular, multilingual (English + Persian), environment‑based,
-API‑enabled **Library Management System** built using:
+A fully modular, multilingual (English + Persian), environment‑based, API‑enabled **Library Management System** built using:
 
 -   **PHP 8+ (Custom MVC Architecture)**
 -   **MySQL**
@@ -20,9 +19,9 @@ software architecture**.
 
 Librava provides full bilingual support:
 
-### ✔ Persian (FA) -- راست‌چین
+### ✔ Persian (FA) - راست‌چین
 
-### ✔ English (EN) -- Left-to-right
+### ✔ English (EN) - Left-to-right
 
 Structure:
 
@@ -30,8 +29,8 @@ Structure:
     │── en.php
     │── fa.php
 
-Switching language is done through: - User preferences\
-- Query parameter (`?lang=en | ?lang=fa`)\
+Switching language is done through: - User preferences
+- Query parameter (`?lang=en | ?lang=fa`)
 - Auto-detection via cookie/session
 
 ------------------------------------------------------------------------
@@ -40,11 +39,11 @@ Switching language is done through: - User preferences\
 
 ## 🔹 **1. Custom MVC Architecture**
 
--   Lightweight & flexible\
--   Clean folder structure\
--   Extendable controllers\
--   Reusable model layer\
--   View templating support\
+-   Lightweight & flexible
+-   Clean folder structure
+-   Extendable controllers
+-   Reusable model layer
+-   View templating support
 -   Auto-routing & fallback routes
 
 ------------------------------------------------------------------------
@@ -114,40 +113,40 @@ All API endpoints require:
 
 ## 🔹 **4. Library Management Module**
 
--   Add / edit / delete books\
--   Upload cover images\
--   Manage categories & tags\
--   Book availability tracking\
--   Search & filtering system\
+-   Add / edit / delete books
+-   Upload cover images
+-   Manage categories & tags
+-   Book availability tracking
+-   Search & filtering system
 -   Sort by author / year / category
 
 ------------------------------------------------------------------------
 
 ## 🔹 **5. Borrowing System**
 
--   Register new borrow\
--   Register returning\
--   Overdue detection\
--   Borrowing history per user\
+-   Register new borrow
+-   Register returning
+-   Overdue detection
+-   Borrowing history per user
 -   Automatic status change
 
 ------------------------------------------------------------------------
 
 ## 🔹 **6. User Management**
 
--   Admin panel\
--   Member accounts\
--   Role system (Admin, Librarian, Member)\
--   Session management\
+-   Admin panel
+-   Member accounts
+-   Role system (Admin, Librarian, Member)
+-   Session management
 -   Secure login
 
 ------------------------------------------------------------------------
 
 ## 🔹 **7. Bootstrap-based UI**
 
--   Clean responsive layout\
--   RTL support for Persian\
--   Dark/Light theme (optional)\
+-   Clean responsive layout
+-   RTL support for Persian
+-   Dark/Light theme (optional)
 -   Accessible design
 
 ------------------------------------------------------------------------
@@ -156,8 +155,8 @@ All API endpoints require:
 
 ### Included automated workflows:
 
--   PHP syntax check\
--   Linting\
+-   PHP syntax check
+-   Linting
 -   Auto-deploy (optional)
 
 Workflow file:
@@ -218,23 +217,23 @@ Workflow file:
 
 # ⚙️ **Installation Guide**
 
-### **Step 1 -- Clone**
+### **Step 1 - Clone**
 
 ``` bash
 git clone https://github.com/mohammadtahaabdinasab/librava.git
 ```
 
-### **Step 2 -- Create environment files**
+### **Step 2 - Create environment files**
 
 Copy `.env.example` to `.env` and `.env.local`.
 
-### **Step 3 -- Install database**
+### **Step 3 - Install database**
 
 Import:
 
     /database/librava.sql
 
-### **Step 4 -- Start local server**
+### **Step 4 - Start local server**
 
     http://localhost/librava/public
 
@@ -244,7 +243,7 @@ Import:
 
 ### Using **Postman**
 
-1.  Import `Librava_API_Collection.json`\
+1.  Import `Librava_API_Collection.json`
 2.  Set variable:
 
 ```{=html}
@@ -263,20 +262,20 @@ Import:
 
 # 🧭 **Roadmap**
 
--   Full JWT authentication\
--   WebSockets for live notifications\
--   Mobile app API mode\
--   Role permissions expansion\
--   Advanced search engine\
--   PDF export (borrow history)\
+-   Full JWT authentication
+-   WebSockets for live notifications
+-   Mobile app API mode
+-   Role permissions expansion
+-   Advanced search engine
+-   PDF export (borrow history)
 -   UI theme builder
 
 ------------------------------------------------------------------------
 
 # 🤝 **Contributing**
 
-1.  Fork\
-2.  Create branch: `feature/<feature-name>`\
+1.  Fork
+2.  Create branch: `feature/<feature-name>`
 3.  Commit using:
 
 ```{=html}
