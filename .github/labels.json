@@ -1,0 +1,37 @@
+[
+  { "name": "enhancement", "color": "3E8EDE", "description": "New feature or request" },
+  { "name": "feature", "color": "1D76DB", "description": "New module or system improvement" },
+  { "name": "documentation", "color": "0E8A16", "description": "Documentation or README updates" },
+  { "name": "refactor", "color": "5319E7", "description": "Code restructuring without behavior changes" },
+  { "name": "performance", "color": "FFD33D", "description": "Performance-related improvements" },
+  { "name": "tests", "color": "BFDADC", "description": "Test-related tasks" },
+
+  { "name": "critical", "color": "D93F0B", "description": "Critical issue requiring immediate fix" },
+  { "name": "high", "color": "B60205", "description": "High priority task" },
+  { "name": "medium", "color": "FBCA04", "description": "Medium priority task" },
+  { "name": "low", "color": "0E8A16", "description": "Low priority task" },
+
+  { "name": "in-progress", "color": "0052CC", "description": "Work currently in development" },
+  { "name": "blocked", "color": "B60205", "description": "Work blocked by another issue" },
+  { "name": "needs-review", "color": "FBCA04", "description": "Waiting for code review" },
+  { "name": "waiting-for-response", "color": "5319E7", "description": "Pending contributor response" },
+
+  { "name": "bug", "color": "D73A4A", "description": "A bug in the system" },
+  { "name": "hotfix", "color": "C91B00", "description": "Urgent fix required" },
+  { "name": "security", "color": "F10000", "description": "Security vulnerability or concern" },
+
+  { "name": "frontend", "color": "1D76DB", "description": "UI/UX or design-related tasks" },
+  { "name": "css", "color": "0E8A16", "description": "CSS styling tasks" },
+  { "name": "javascript", "color": "F1E05A", "description": "JavaScript-related tasks" },
+  { "name": "bootstrap", "color": "6F42C1", "description": "Bootstrap UI work" },
+  { "name": "rtl-support", "color": "FF6F00", "description": "Right-to-left UI support" },
+
+  { "name": "php", "color": "4F5D95", "description": "Backend PHP changes" },
+  { "name": "mvc", "color": "0064A6", "description": "MVC layer improvements" },
+  { "name": "database", "color": "E99695", "description": "Database or SQL tasks" },
+  { "name": "api", "color": "0366D6", "description": "REST API tasks" },
+
+  { "name": "fa-language", "color": "FFCC00", "description": "Persian language support" },
+  { "name": "en-language", "color": "0055FF", "description": "English language support" },
+  { "name": "multilingual", "color": "03A9F4", "description": "Multi-language implementation tasks" }
+]
