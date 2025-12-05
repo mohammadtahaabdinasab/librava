@@ -6,13 +6,13 @@ use Core\Model;
 
 class Book extends Model
 {
-    public static function all()
+    public static function all(?string $table = null)
     {
-        return parent::all();
+        return parent::all($table);
     }
 
-    public static function findById(int $id)
+    public static function findById(int $id, string $table = null)
     {
-        return parent::findById($id);
+        return parent::findById($id, $table);
     }
 }

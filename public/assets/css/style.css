@@ -1,9 +1,19 @@
 /* Librava custom styles - RTL/LTR compatible */
 
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --light-bg: #ecf0f1;
+    /* Palette provided by user */
+    --olive-leaf: #606c38;
+    --black-forest: #283618;
+    --cornsilk: #fefae0;
+    --sunlit-clay: #dda15e;
+    --copperwood: #bc6c25;
+
+    /* Semantic tokens (used across the site) */
+    --primary-color: var(--olive-leaf);
+    --muted-color: var(--black-forest);
+    --accent-color: var(--sunlit-clay);
+    --accent-dark: var(--copperwood);
+    --light-bg: var(--cornsilk);
 }
 
 /* Support both LTR and RTL */
@@ -24,7 +34,7 @@ html[dir="ltr"] {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--light-bg);
-    color: #333;
+    color: var(--muted-color);
 }
 
 /* Navbar styles with logical properties */
@@ -76,13 +86,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .btn-primary:hover {
-    background-color: #2980b9;
-    border-color: #2980b9;
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
 }
 
 /* Alert boxes */
@@ -254,7 +264,7 @@ html[dir="rtl"] .settings-panel {
     justify-content: space-between;
     padding: .75rem 1rem;
     border-bottom: 1px solid #f0f0f0;
-    background: linear-gradient(90deg, rgba(52,152,219,0.06), rgba(44,62,80,0.03));
+    background: linear-gradient(90deg, rgba(221,161,94,0.08), rgba(96,108,56,0.03));
 }
 
 .settings-body {
@@ -306,7 +316,7 @@ html[dir="rtl"] .settings-panel {
 
 /* Accessibility focus styles */
 :focus {
-    outline: 3px solid rgba(52,152,219,0.25);
+    outline: 3px solid rgba(96,108,56,0.18);
     outline-offset: 2px;
 }
 

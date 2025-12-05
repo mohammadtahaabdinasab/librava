@@ -20,12 +20,26 @@ Librava requires OpenSSL and cURL extensions for secure operations and API reque
 2. Find and uncomment these lines (remove the leading `;`):
    - `extension=openssl`
    - `extension=curl`
+  - `extension=pdo_mysql`  # enable PDO MySQL driver for database access
 3. Save and restart Apache
 
 **For standalone PHP:**
 1. Run: `php --ini` to find your `php.ini` file
 2. Open the file and uncomment `extension=openssl` and `extension=curl`
+  and also enable the PDO driver for MySQL by uncommenting `extension=pdo_mysql` (or `extension=php_pdo_mysql.dll` on some Windows builds).
 3. Verify: `php -m | findstr openssl` (should output `openssl`)
+
+### Verifying PDO driver (MySQL)
+
+Run these in PowerShell to confirm the PDO MySQL driver is available to the CLI:
+
+```powershell
+php --ini            # shows which php.ini file is loaded by the CLI
+php -m | Select-String pdo  # shows pdo and pdo_mysql if enabled
+php -r "print_r(PDO::getAvailableDrivers());"  # lists available PDO drivers
+```
+
+If `pdo_mysql` does not appear, enable it in the `php.ini` used by the CLI (from `php --ini`) and restart any running PHP servers.
 
 ### Linux/macOS
 
