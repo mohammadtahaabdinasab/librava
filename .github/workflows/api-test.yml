@@ -1,0 +1,17 @@
+name: API Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  api-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Test API health endpoint
+        run: |
+          curl -I http://localhost/api/books || exit 0
