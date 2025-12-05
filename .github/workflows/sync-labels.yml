@@ -6,6 +6,10 @@ on:
       - "labels.yml"
   workflow_dispatch:
 
+permissions:
+  issues: write
+  contents: write
+
 jobs:
   labeler:
     runs-on: ubuntu-latest
@@ -16,6 +20,6 @@ jobs:
       - name: GitHub Labeler
         uses: crazy-max/ghaction-github-labeler@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          yaml_file: labels.yml
-          skip_delete: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          yaml-file: labels.yml
+          skip-delete: false
