@@ -84,20 +84,82 @@ Environment priority:
 
 ------------------------------------------------------------------------
 
-## 🔹 **3. RESTful API System**
+## 🔹 **3. Comprehensive RESTful API System**
 
-Base URL:
+Librava includes a **production-ready REST API** designed for web and mobile applications (especially Android).
 
-    /api/
+### **API Overview**
 
-### **Available Endpoints**
+- ✅ JWT Token Authentication (7-day expiry)
+- ✅ Role-based Access Control (admin/user)
+- ✅ Pagination with metadata
+- ✅ Search functionality
+- ✅ Consistent JSON responses
+- ✅ Comprehensive error handling
+- ✅ Mock data for development
 
-  Endpoint           Method   Description
-  ------------------ -------- -----------------
-  `/api/books`       GET      Get all books
-  `/api/book/{id}`   GET      Get book by ID
-  `/api/book`        POST     Create new book
-  `/api/book/{id}`   PUT      Update book
+### **Authentication**
+```
+POST /api/auth/login
+POST /api/auth/register
+POST /api/auth/refresh
+GET /api/auth/me
+```
+
+### **Book Management**
+```
+GET /api/books (with pagination & search)
+GET /api/books/:id
+POST /api/books (admin only)
+PUT /api/books/:id (admin only)
+DELETE /api/books/:id (admin only)
+```
+
+### **User Management (Admin)**
+```
+GET /api/admin/users
+GET /api/admin/users/:id
+PUT /api/admin/users/:id
+DELETE /api/admin/users/:id
+GET /api/admin/dashboard
+```
+
+### **Response Format**
+All endpoints return standardized JSON:
+```json
+{
+  "status": "success|error",
+  "message": "Descriptive message",
+  "data": { /* response data */ },
+  "errors": { /* validation errors */ },
+  "meta": { /* pagination metadata */ }
+}
+```
+
+### **Quick API Test**
+```bash
+# Login
+curl -X POST http://localhost:8000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"admin@librava.com","password":"admin123"}'
+
+# Get books
+curl -X GET http://localhost:8000/api/books
+
+# Create book (with token)
+curl -X POST http://localhost:8000/api/books \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Book Title","author":"Author","published_year":2023}'
+```
+
+📖 **See `API.md` for complete documentation**
+📱 **See `ANDROID-INTEGRATION.md` for mobile integration guide**
+🧪 **See `TESTING.md` for quick testing with curl**
+
+------------------------------------------------------------------------
+
+## 🔹 **4. Existing Features
   `/api/book/{id}`   DELETE   Delete book
   `/api/users`       GET      Fetch users
   `/api/borrow`      POST     Borrow a book
