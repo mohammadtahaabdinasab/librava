@@ -8,7 +8,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = ['title' => 'Welcome', 'message' => 'Welcome to Librava'];
-        $this->view('home', $data);
+        $data = [
+            'title' => 'Librava - Modern Library Management System',
+            'description' => 'The modern multilingual library management system with REST API',
+            'keywords' => 'library, books, management, system',
+        ];
+        $this->renderWithLayout('home', $data);
     }
 }
