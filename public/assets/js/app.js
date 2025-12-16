@@ -19,9 +19,21 @@
     function loadSettings() {
         try {
             const raw = localStorage.getItem(STORAGE_KEY);
-            return raw ? JSON.parse(raw) : {};
+            const settings = raw ? JSON.parse(raw) : {};
+            // Ensure defaults
+            return {
+                rtl: settings.rtl || false,
+                dark: settings.dark || false,
+                lang: settings.lang || 'en',
+                fontSize: settings.fontSize || 16
+            };
         } catch (e) {
-            return {};
+            return {
+                rtl: false,
+                dark: false,
+                lang: 'en',
+                fontSize: 16
+            };
         }
     }
 
@@ -77,6 +89,7 @@
 
     // Initialize
     const settings = loadSettings();
+    console.log('Loaded settings:', settings);
     applySettings(settings);
 
     // Events
@@ -99,9 +112,11 @@
     });
 
     if (toggleDark) toggleDark.addEventListener('change', function () {
+        console.log('Dark mode toggle changed:', this.checked);
         settings.dark = this.checked;
         applySettings(settings);
         saveSettings(settings);
+        console.log('Settings saved:', settings);
     });
 
     if (fontSizeRange) fontSizeRange.addEventListener('input', function () {
