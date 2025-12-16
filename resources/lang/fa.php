@@ -8,6 +8,7 @@ return [
     'nav.contact' => 'تماس',
     'nav.creator' => 'سازنده',
     'nav.api' => 'API',
+    'nav.dark_mode' => 'حالت تاریک',
     'nav.language' => 'زبان',
 
     // Home Page

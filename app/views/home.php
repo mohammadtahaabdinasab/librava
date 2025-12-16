@@ -61,19 +61,6 @@
         </div>
     </div>
 </section>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 feature-card">
-                    <div class="card-body text-center">
-                        <i class="fas fa-bolt fa-3x mb-3" style="color: #dda15e;"></i>
-                        <h5 class="card-title">Fast</h5>
-                        <p class="card-text small">Optimized performance and quick search</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Stats Section -->
 <section class="py-5 bg-light">

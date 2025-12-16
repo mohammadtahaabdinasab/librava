@@ -8,6 +8,7 @@ return [
     'nav.contact' => 'Contact',
     'nav.creator' => 'Creator',
     'nav.api' => 'API',
+    'nav.dark_mode' => 'Dark Mode',
     'nav.language' => 'Language',
 
     // Home Page

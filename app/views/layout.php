@@ -12,12 +12,12 @@
     <meta name="keywords" content="<?= htmlentities($keywords ?? 'library, books, management') ?>">
     <title><?= htmlentities($title ?? 'Librava') ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUjwokJlakedysLqiQmBNkENk16NfvYxqvapXenjf3AUW+RTOOMBF572HCwXMqsom8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="/">
                 <i class="fas fa-book-open me-2"></i>Librava
@@ -28,24 +28,29 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/"><?php t('nav.home'); ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/books">Books</a>
+                        <a class="nav-link" href="/books"><?php t('nav.books'); ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
+                        <a class="nav-link" href="/about"><?php t('nav.about'); ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
+                        <a class="nav-link" href="/contact"><?php t('nav.contact'); ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/creator">Creator</a>
+                        <a class="nav-link" href="/creator"><?php t('nav.creator'); ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-primary btn-sm text-white ms-2" href="/api/books" target="_blank">
-                            <i class="fas fa-flask me-1"></i>API
+                            <i class="fas fa-flask me-1"></i><?php t('nav.api'); ?>
                         </a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-outline-light btn-sm theme-toggle" onclick="toggleTheme()">
+                            <i class="fas fa-moon me-1"></i><span><?php t('nav.dark_mode'); ?></span>
+                        </button>
                     </li>
                     <li class="nav-item dropdown ms-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarLanguage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -67,35 +72,35 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light mt-5 py-4">
+    <footer class="footer-custom py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <h5><i class="fas fa-book-open me-2 text-primary"></i>Librava</h5>
-                    <p class="text-muted small"><?php t('footer.about_librava'); ?></p>
+                    <p class="footer-text small"><?php t('footer.about_librava'); ?></p>
                 </div>
                 <div class="col-md-4 mb-3">
                     <h6><?php t('footer.quick_links'); ?></h6>
                     <ul class="list-unstyled small">
-                        <li><a href="/" class="text-muted text-decoration-none"><?php t('nav.home'); ?></a></li>
-                        <li><a href="/books" class="text-muted text-decoration-none"><?php t('nav.books'); ?></a></li>
-                        <li><a href="/about" class="text-muted text-decoration-none"><?php t('nav.about'); ?></a></li>
-                        <li><a href="/contact" class="text-muted text-decoration-none"><?php t('nav.contact'); ?></a></li>
+                        <li><a href="/" class="footer-link text-decoration-none"><?php t('nav.home'); ?></a></li>
+                        <li><a href="/books" class="footer-link text-decoration-none"><?php t('nav.books'); ?></a></li>
+                        <li><a href="/about" class="footer-link text-decoration-none"><?php t('nav.about'); ?></a></li>
+                        <li><a href="/contact" class="footer-link text-decoration-none"><?php t('nav.contact'); ?></a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-3">
                     <h6><?php t('footer.follow'); ?></h6>
-                    <div class="text-muted small">
-                        <a href="#" class="text-decoration-none text-muted me-3"><i class="fab fa-github"></i></a>
-                        <a href="#" class="text-decoration-none text-muted me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-decoration-none text-muted me-3"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-decoration-none text-muted"><i class="fab fa-instagram"></i></a>
+                    <div class="footer-text small">
+                        <a href="#" class="footer-link text-decoration-none me-3"><i class="fab fa-github"></i></a>
+                        <a href="#" class="footer-link text-decoration-none me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-link text-decoration-none me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="footer-link text-decoration-none"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <hr class="border-secondary">
-            <div class="text-center text-muted small">
-                <p>&copy; 2025 <?php t('footer.copyright'); ?> | <a href="#" class="text-muted text-decoration-none"><?php t('footer.privacy'); ?></a> | <a href="#" class="text-muted text-decoration-none"><?php t('footer.terms'); ?></a></p>
+            <hr class="footer-divider">
+            <div class="text-center footer-text small">
+                <p>&copy; 2025 <?php t('footer.copyright'); ?> | <a href="#" class="footer-link text-decoration-none"><?php t('footer.privacy'); ?></a> | <a href="#" class="footer-link text-decoration-none"><?php t('footer.terms'); ?></a></p>
             </div>
         </div>
     </footer>

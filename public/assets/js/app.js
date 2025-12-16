@@ -90,6 +90,7 @@
     // Initialize
     const settings = loadSettings();
     applySettings(settings);
+    updateThemeButton(); // Update button on load
 
     // Events
     if (settingsToggle) settingsToggle.addEventListener('click', openSettings);
@@ -157,11 +158,36 @@
         }
     });
 
-    // Small animation on page load
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.card').forEach(function (el, idx) {
-            el.style.animationDelay = (idx * 80) + 'ms';
-            el.classList.add('fade-in-up');
-        });
-    });
+    // Theme toggle function for navbar button
+    window.toggleTheme = function() {
+        settings.dark = !settings.dark;
+        applySettings(settings);
+        saveSettings(settings);
+        
+        // Update button text/icon
+        updateThemeButton();
+    };
+
+    function updateThemeButton() {
+        const themeBtn = document.querySelector('.theme-toggle');
+        if (themeBtn) {
+            const icon = themeBtn.querySelector('i');
+            const textSpan = themeBtn.querySelector('span');
+            if (settings.dark) {
+                if (icon) icon.className = 'fas fa-sun me-1';
+                if (textSpan) textSpan.textContent = 'Light Mode'; // Will be translated by PHP
+            } else {
+                if (icon) icon.className = 'fas fa-moon me-1';
+                if (textSpan) textSpan.textContent = 'Dark Mode'; // Will be translated by PHP
+            }
+        }
+    }
+
+    // Small animation on page load - REMOVED per user request
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     document.querySelectorAll('.card').forEach(function (el, idx) {
+    //         el.style.animationDelay = (idx * 80) + 'ms';
+    //         el.classList.add('fade-in-up');
+    //     });
+    // });
 })();
