@@ -29,6 +29,13 @@
         localStorage.setItem(STORAGE_KEY, JSON.stringify(s));
     }
 
+    function switchLanguage(lang) {
+        // Update URL with language parameter
+        const url = new URL(window.location);
+        url.searchParams.set('lang', lang);
+        window.location.href = url.toString();
+    }
+
     function applySettings(s) {
         if (s.rtl) {
             htmlEl.setAttribute('dir', 'rtl');
@@ -79,10 +86,16 @@
 
     if (toggleRTL) toggleRTL.addEventListener('change', function () {
         settings.rtl = this.checked;
-        // set the language default when toggling
+        // Set the language default when toggling RTL
         settings.lang = this.checked ? 'fa' : 'en';
         applySettings(settings);
         saveSettings(settings);
+        
+        // Optionally switch language in URL if not already set
+        const currentLang = new URL(window.location).searchParams.get('lang');
+        if ((this.checked && currentLang !== 'fa') || (!this.checked && currentLang !== 'en')) {
+            switchLanguage(settings.lang);
+        }
     });
 
     if (toggleDark) toggleDark.addEventListener('change', function () {
@@ -102,6 +115,18 @@
         const cleared = {};
         applySettings(cleared);
         saveSettings(cleared);
+    });
+
+    // Language switching from navbar dropdown
+    document.querySelectorAll('.dropdown-menu a[href*="?lang="]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = new URL(this.href);
+            const lang = url.searchParams.get('lang');
+            if (lang) {
+                switchLanguage(lang);
+            }
+        });
     });
 
     if (backBtn) backBtn.addEventListener('click', function () {

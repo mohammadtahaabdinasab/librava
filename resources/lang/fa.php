@@ -78,7 +78,9 @@ return [
     // Creator Page
     'creator.title' => 'ملاقات با سازنده',
     'creator.subtitle' => 'پیرامون سازنده لیبراوا',
-    'creator.about' => 'درباره محمدتها',
+    'creator.role' => 'توسعه‌دهنده فول‌استک و سازنده لیبراوا',
+    'creator.location' => 'تهران، ایران',
+    'creator.bio' => 'محمدتها یک توسعه‌دهنده فول‌استک پرشوری است که بیش از ۱۰ سال تجربه در توسعه برنامه‌های وب دارد.',
     'creator.skills' => 'مهارت‌ها و تخصص',
     'creator.journey' => 'سفر به لیبراوا',
     'creator.team' => 'تیم پشت لیبراوا',

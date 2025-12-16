@@ -20,8 +20,8 @@
                     <i class="fas fa-user-circle fa-10x" style="color: #606c38;"></i>
                 </div>
                 <h3>Mohammad Taha Abdinasab</h3>
-                <p class="lead text-muted">Full-Stack Developer & Librava Creator</p>
-                <p class="text-muted">Tehran, Iran</p>
+                <p class="lead text-muted"><?php t('creator.role'); ?></p>
+                <p class="text-muted"><?php t('creator.location'); ?></p>
                 
                 <div class="social-links mt-4">
                     <a href="https://github.com/mohammadtahaabdinasab" class="btn btn-sm btn-outline-dark me-2" target="_blank">
@@ -39,7 +39,7 @@
             <div class="col-lg-8">
                 <h4 class="mb-4"><?php t('creator.about'); ?></h4>
                 <p>
-                    Mohammad Taha is a passionate full-stack developer with over 10 years of experience in web application development. 
+                    <?php t('creator.bio'); ?>
                     He specializes in building scalable, secure, and user-friendly solutions for complex problems.
                 </p>
                 

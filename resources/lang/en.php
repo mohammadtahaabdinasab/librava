@@ -76,9 +76,14 @@ return [
     'books.rating' => 'Rating',
 
     // Creator Page
-    'creator.title' => 'Meet The Creator',
-    'creator.subtitle' => 'The visionary behind Librava',
-    'creator.about' => 'About Mohammad Taha',
+    'creator.title' => 'Meet the Creator',
+    'creator.subtitle' => 'About the creator of Librava',
+    'creator.role' => 'Full-Stack Developer & Librava Creator',
+    'creator.location' => 'Tehran, Iran',
+    'creator.bio' => 'Mohammad Taha is a passionate full-stack developer with over 10 years of experience in web application development.',
+    'creator.role' => 'Full-Stack Developer & Librava Creator',
+    'creator.location' => 'Tehran, Iran',
+    'creator.bio' => 'Mohammad Taha is a passionate full-stack developer with over 10 years of experience in web application development.',
     'creator.skills' => 'Skills & Expertise',
     'creator.journey' => 'Journey to Librava',
     'creator.team' => 'The Team Behind Librava',

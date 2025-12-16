@@ -88,7 +88,12 @@ if (!function_exists('trans')) {
         
         $translations = require $translationFile;
         
-        // Support nested keys like 'nav.home'
+        // Check if it's a flat key (like 'nav.home')
+        if (isset($translations[$key])) {
+            return $translations[$key];
+        }
+        
+        // Support nested keys like 'nav.home' (fallback for old structure)
         $keys = explode('.', $key);
         $value = $translations;
         
