@@ -89,7 +89,6 @@
 
     // Initialize
     const settings = loadSettings();
-    console.log('Loaded settings:', settings);
     applySettings(settings);
 
     // Events
@@ -112,11 +111,9 @@
     });
 
     if (toggleDark) toggleDark.addEventListener('change', function () {
-        console.log('Dark mode toggle changed:', this.checked);
         settings.dark = this.checked;
         applySettings(settings);
         saveSettings(settings);
-        console.log('Settings saved:', settings);
     });
 
     if (fontSizeRange) fontSizeRange.addEventListener('input', function () {
