@@ -4,7 +4,7 @@
  */
 ?>
 <!-- Hero Section -->
-<section class="hero-section py-5 bg-gradient" style="background: linear-gradient(135deg, #606c38 0%, #283618 100%);">
+<section class="hero-section py-5" style="background: linear-gradient(135deg, #606c38 0%, #283618 100%);">
     <div class="container text-center text-white py-5">
         <h1 class="display-3 fw-bold mb-3">📚 <?php t('home.title'); ?></h1>
         <p class="lead mb-4"><?php t('home.subtitle'); ?></p>
