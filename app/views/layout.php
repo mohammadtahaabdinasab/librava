@@ -48,7 +48,7 @@
                         </a>
                     </li>
                     <li class="nav-item ms-2">
-                        <button class="btn btn-outline-light btn-sm theme-toggle" onclick="toggleTheme()">
+                        <button class="theme-toggle" onclick="toggleTheme()">
                             <i class="fas fa-moon me-1"></i><span><?php t('nav.dark_mode'); ?></span>
                         </button>
                     </li>
@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <h5><i class="fas fa-book-open me-2 text-primary"></i>Librava</h5>
+                    <h5><i class="fas fa-book-open me-2"></i>Librava</h5>
                     <p class="footer-text small"><?php t('footer.about_librava'); ?></p>
                 </div>
                 <div class="col-md-4 mb-3">
