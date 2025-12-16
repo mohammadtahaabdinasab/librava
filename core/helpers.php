@@ -67,3 +67,48 @@ if (!function_exists('getCurrentLang')) {
         return $_GET['lang'] ?? $_SESSION['lang'] ?? env('DEFAULT_LANG', 'en');
     }
 }
+
+// Helper to get translation string by key
+if (!function_exists('trans')) {
+    function trans(string $key, string $lang = null, $default = null)
+    {
+        $lang = $lang ?? getCurrentLang();
+        
+        // Load translation file for the language
+        $translationFile = realpath(__DIR__ . '/../resources/lang/' . $lang . '.php');
+        
+        if (!file_exists($translationFile)) {
+            // Fall back to English if language file doesn't exist
+            $translationFile = realpath(__DIR__ . '/../resources/lang/en.php');
+        }
+        
+        if (!file_exists($translationFile)) {
+            return $default ?? $key;
+        }
+        
+        $translations = require $translationFile;
+        
+        // Support nested keys like 'nav.home'
+        $keys = explode('.', $key);
+        $value = $translations;
+        
+        foreach ($keys as $k) {
+            if (is_array($value) && isset($value[$k])) {
+                $value = $value[$k];
+            } else {
+                return $default ?? $key;
+            }
+        }
+        
+        return $value;
+    }
+}
+
+// Helper to get translated text and echo it
+if (!function_exists('t')) {
+    function t(string $key, string $lang = null, $default = null): void
+    {
+        echo htmlentities(trans($key, $lang, $default));
+    }
+}
+

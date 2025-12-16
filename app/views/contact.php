@@ -6,8 +6,8 @@
 <!-- Page Header -->
 <section class="py-5" style="background: linear-gradient(135deg, #606c38 0%, #283618 100%);">
     <div class="container">
-        <h1 class="text-white display-4 fw-bold">Contact Us</h1>
-        <p class="text-light lead">We'd love to hear from you</p>
+        <h1 class="text-white display-4 fw-bold"><?php t('contact.title'); ?></h1>
+        <p class="text-light lead"><?php t('contact.subtitle'); ?></p>
     </div>
 </section>
 
@@ -19,18 +19,18 @@
             <div class="col-lg-8">
                 <div class="card shadow-lg">
                     <div class="card-body p-5">
-                        <h5 class="card-title mb-4">Send us a Message</h5>
+                        <h5 class="card-title mb-4"><?php t('contact.send_message'); ?></h5>
                         <form id="contactForm">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Full Name</label>
+                                <label for="name" class="form-label"><?php t('contact.full_name'); ?></label>
                                 <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
+                                <label for="email" class="form-label"><?php t('contact.email'); ?></label>
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="mb-3">
-                                <label for="subject" class="form-label">Subject</label>
+                                <label for="subject" class="form-label"><?php t('contact.subject'); ?></label>
                                 <select class="form-select" id="subject" name="subject" required>
                                     <option value="">Choose a subject...</option>
                                     <option value="support">Technical Support</option>
@@ -40,11 +40,11 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
+                                <label for="message" class="form-label"><?php t('contact.message'); ?></label>
                                 <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg w-100">
-                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                                <i class="fas fa-paper-plane me-2"></i><?php t('contact.send'); ?>
                             </button>
                         </form>
                     </div>
@@ -56,7 +56,7 @@
                 <div class="contact-info">
                     <div class="contact-item mb-4">
                         <i class="fas fa-map-marker-alt fa-2x mb-3" style="color: #dda15e;"></i>
-                        <h6>Address</h6>
+                        <h6><?php t('contact.address'); ?></h6>
                         <p class="text-muted">
                             Tehran, Iran<br>
                             Library Management Division
@@ -65,16 +65,16 @@
 
                     <div class="contact-item mb-4">
                         <i class="fas fa-phone fa-2x mb-3" style="color: #dda15e;"></i>
-                        <h6>Phone</h6>
+                        <h6><?php t('contact.phone'); ?></h6>
                         <p class="text-muted">
                             <a href="tel:+98-21-1234-5678" class="text-decoration-none">+98 (21) 1234-5678</a><br>
-                            <span class="small">Mon - Fri, 9:00 AM - 5:00 PM</span>
+                            <span class="small"><?php t('contact.business_hours'); ?></span>
                         </p>
                     </div>
 
                     <div class="contact-item mb-4">
                         <i class="fas fa-envelope fa-2x mb-3" style="color: #dda15e;"></i>
-                        <h6>Email</h6>
+                        <h6><?php t('contact.email'); ?></h6>
                         <p class="text-muted">
                             <a href="mailto:info@librava.com" class="text-decoration-none">info@librava.com</a><br>
                             <a href="mailto:support@librava.com" class="text-decoration-none">support@librava.com</a>

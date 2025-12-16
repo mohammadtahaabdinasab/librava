@@ -6,8 +6,8 @@
 <!-- Page Header -->
 <section class="py-5" style="background: linear-gradient(135deg, #606c38 0%, #283618 100%);">
     <div class="container">
-        <h1 class="text-white display-4 fw-bold">About Librava</h1>
-        <p class="text-light lead">Learn about our mission and vision</p>
+        <h1 class="text-white display-4 fw-bold"><?php t('about.title'); ?></h1>
+        <p class="text-light lead"><?php t('about.subtitle'); ?></p>
     </div>
 </section>
 
@@ -16,10 +16,9 @@
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-6">
-                <h2 class="mb-4">Our Mission</h2>
+                <h2 class="mb-4"><?php t('about.mission'); ?></h2>
                 <p class="mb-3">
-                    Librava is designed to revolutionize how libraries manage their collections and serve their communities. 
-                    We believe that modern libraries deserve modern tools.
+                    <?php t('about.mission_desc'); ?>
                 </p>
                 <p class="mb-3">
                     Our platform combines ease of use with powerful features, making it accessible to libraries of all sizes—
@@ -32,7 +31,7 @@
             <div class="col-lg-6">
                 <div class="card shadow-lg">
                     <div class="card-body p-5">
-                        <h5 class="card-title mb-4">Key Statistics</h5>
+                        <h5 class="card-title mb-4"><?php t('about.key_stats'); ?></h5>
                         <ul class="list-unstyled">
                             <li class="mb-3">
                                 <strong style="color: #606c38;">1000+</strong> Books managed in collections
@@ -60,27 +59,27 @@
 <!-- Features Details -->
 <section class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5">Why Choose Librava?</h2>
+        <h2 class="text-center mb-5"><?php t('about.why_choose'); ?></h2>
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="feature-item">
                     <i class="fas fa-globe fa-2x mb-3" style="color: #dda15e;"></i>
-                    <h5>Multilingual Support</h5>
-                    <p>Complete support for English and Persian languages with RTL layout for right-to-left scripts.</p>
+                    <h5><?php t('home.multilingual'); ?></h5>
+                    <p><?php t('home.multilingual_desc'); ?></p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="feature-item">
                     <i class="fas fa-mobile-alt fa-2x mb-3" style="color: #dda15e;"></i>
-                    <h5>Mobile-First Design</h5>
-                    <p>Fully responsive interface that works seamlessly on desktop, tablet, and mobile devices.</p>
+                    <h5><?php t('home.mobile_ready'); ?></h5>
+                    <p><?php t('home.mobile_ready_desc'); ?></p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="feature-item">
                     <i class="fas fa-shield-alt fa-2x mb-3" style="color: #dda15e;"></i>
-                    <h5>Enterprise Security</h5>
-                    <p>JWT authentication, role-based access control, and encrypted data storage for maximum protection.</p>
+                    <h5><?php t('home.secure'); ?></h5>
+                    <p><?php t('home.secure_desc'); ?></p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -93,8 +92,8 @@
             <div class="col-md-6">
                 <div class="feature-item">
                     <i class="fas fa-tachometer-alt fa-2x mb-3" style="color: #dda15e;"></i>
-                    <h5>High Performance</h5>
-                    <p>Optimized database queries and caching strategies ensure lightning-fast response times.</p>
+                    <h5><?php t('home.fast'); ?></h5>
+                    <p><?php t('home.fast_desc'); ?></p>
                 </div>
             </div>
             <div class="col-md-6">

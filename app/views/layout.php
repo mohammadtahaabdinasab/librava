@@ -47,6 +47,15 @@
                             <i class="fas fa-flask me-1"></i>API
                         </a>
                     </li>
+                    <li class="nav-item dropdown ms-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarLanguage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1"></i><?php echo $lang === 'fa' ? 'فارسی' : 'English'; ?>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarLanguage">
+                            <li><a class="dropdown-item <?php echo $lang === 'en' ? 'active' : ''; ?>" href="?lang=en">English</a></li>
+                            <li><a class="dropdown-item <?php echo $lang === 'fa' ? 'active' : ''; ?>" href="?lang=fa">فارسی</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -63,19 +72,19 @@
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <h5><i class="fas fa-book-open me-2 text-primary"></i>Librava</h5>
-                    <p class="text-muted small">A comprehensive multilingual library management system for modern needs.</p>
+                    <p class="text-muted small"><?php t('footer.about_librava'); ?></p>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <h6>Quick Links</h6>
+                    <h6><?php t('footer.quick_links'); ?></h6>
                     <ul class="list-unstyled small">
-                        <li><a href="/" class="text-muted text-decoration-none">Home</a></li>
-                        <li><a href="/books" class="text-muted text-decoration-none">Browse Books</a></li>
-                        <li><a href="/about" class="text-muted text-decoration-none">About Us</a></li>
-                        <li><a href="/contact" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="/" class="text-muted text-decoration-none"><?php t('nav.home'); ?></a></li>
+                        <li><a href="/books" class="text-muted text-decoration-none"><?php t('nav.books'); ?></a></li>
+                        <li><a href="/about" class="text-muted text-decoration-none"><?php t('nav.about'); ?></a></li>
+                        <li><a href="/contact" class="text-muted text-decoration-none"><?php t('nav.contact'); ?></a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <h6>Follow Us</h6>
+                    <h6><?php t('footer.follow'); ?></h6>
                     <div class="text-muted small">
                         <a href="#" class="text-decoration-none text-muted me-3"><i class="fab fa-github"></i></a>
                         <a href="#" class="text-decoration-none text-muted me-3"><i class="fab fa-twitter"></i></a>
@@ -86,7 +95,7 @@
             </div>
             <hr class="border-secondary">
             <div class="text-center text-muted small">
-                <p>&copy; 2025 Librava. All rights reserved. | <a href="#" class="text-muted text-decoration-none">Privacy Policy</a> | <a href="#" class="text-muted text-decoration-none">Terms of Service</a></p>
+                <p>&copy; 2025 <?php t('footer.copyright'); ?> | <a href="#" class="text-muted text-decoration-none"><?php t('footer.privacy'); ?></a> | <a href="#" class="text-muted text-decoration-none"><?php t('footer.terms'); ?></a></p>
             </div>
         </div>
     </footer>

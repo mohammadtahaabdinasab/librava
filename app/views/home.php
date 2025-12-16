@@ -6,13 +6,13 @@
 <!-- Hero Section -->
 <section class="hero-section py-5 bg-gradient" style="background: linear-gradient(135deg, #606c38 0%, #283618 100%);">
     <div class="container text-center text-white py-5">
-        <h1 class="display-3 fw-bold mb-3">📚 Welcome to Librava</h1>
-        <p class="lead mb-4">The Modern Multilingual Library Management System</p>
+        <h1 class="display-3 fw-bold mb-3">📚 <?php t('home.title'); ?></h1>
+        <p class="lead mb-4"><?php t('home.subtitle'); ?></p>
         <a href="/books" class="btn btn-primary btn-lg me-2">
-            <i class="fas fa-book me-2"></i>Browse Books
+            <i class="fas fa-book me-2"></i><?php t('home.browse_books'); ?>
         </a>
         <a href="#features" class="btn btn-outline-light btn-lg">
-            <i class="fas fa-info-circle me-2"></i>Learn More
+            <i class="fas fa-info-circle me-2"></i><?php t('home.learn_more'); ?>
         </a>
     </div>
 </section>
@@ -20,14 +20,14 @@
 <!-- Features Section -->
 <section id="features" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-5">✨ Key Features</h2>
+        <h2 class="text-center mb-5">✨ <?php t('home.features'); ?></h2>
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 feature-card">
                     <div class="card-body text-center">
                         <i class="fas fa-globe fa-3x mb-3" style="color: #dda15e;"></i>
-                        <h5 class="card-title">Multilingual</h5>
-                        <p class="card-text small">Support for English and Persian (RTL/LTR)</p>
+                        <h5 class="card-title"><?php t('home.multilingual'); ?></h5>
+                        <p class="card-text small"><?php t('home.multilingual_desc'); ?></p>
                     </div>
                 </div>
             </div>
@@ -35,8 +35,8 @@
                 <div class="card h-100 feature-card">
                     <div class="card-body text-center">
                         <i class="fas fa-mobile-alt fa-3x mb-3" style="color: #dda15e;"></i>
-                        <h5 class="card-title">Mobile Ready</h5>
-                        <p class="card-text small">Fully responsive design with API support</p>
+                        <h5 class="card-title"><?php t('home.mobile_ready'); ?></h5>
+                        <p class="card-text small"><?php t('home.mobile_ready_desc'); ?></p>
                     </div>
                 </div>
             </div>
@@ -44,10 +44,23 @@
                 <div class="card h-100 feature-card">
                     <div class="card-body text-center">
                         <i class="fas fa-lock fa-3x mb-3" style="color: #dda15e;"></i>
-                        <h5 class="card-title">Secure</h5>
-                        <p class="card-text small">JWT authentication and role-based access</p>
+                        <h5 class="card-title"><?php t('home.secure'); ?></h5>
+                        <p class="card-text small"><?php t('home.secure_desc'); ?></p>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-bolt fa-3x mb-3" style="color: #dda15e;"></i>
+                        <h5 class="card-title"><?php t('home.fast'); ?></h5>
+                        <p class="card-text small"><?php t('home.fast_desc'); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 feature-card">
@@ -68,15 +81,15 @@
         <div class="row text-center">
             <div class="col-md-4 mb-3">
                 <h3 class="display-5" style="color: #606c38;">1000+</h3>
-                <p class="text-muted">Books in Collection</p>
+                <p class="text-muted"><?php t('home.books_collection'); ?></p>
             </div>
             <div class="col-md-4 mb-3">
                 <h3 class="display-5" style="color: #606c38;">500+</h3>
-                <p class="text-muted">Active Members</p>
+                <p class="text-muted"><?php t('home.active_members'); ?></p>
             </div>
             <div class="col-md-4 mb-3">
                 <h3 class="display-5" style="color: #606c38;">25+</h3>
-                <p class="text-muted">API Endpoints</p>
+                <p class="text-muted"><?php t('home.api_endpoints'); ?></p>
             </div>
         </div>
     </div>
@@ -85,16 +98,16 @@
 <!-- Recent Books Section -->
 <section class="py-5">
     <div class="container">
-        <h2 class="mb-5">📖 Featured Books</h2>
+        <h2 class="mb-5">📖 <?php t('home.featured_books'); ?></h2>
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm book-card">
                     <div class="card-body">
                         <h5 class="card-title">1984</h5>
                         <p class="card-text text-muted">George Orwell</p>
-                        <p class="card-text small"><strong>Published:</strong> 1949</p>
+                        <p class="card-text small"><strong><?php t('books.published'); ?>:</strong> 1949</p>
                         <p class="card-text">Dystopian novel exploring themes of totalitarianism and control.</p>
-                        <a href="/books" class="btn btn-sm btn-primary">View Details</a>
+                        <a href="/books" class="btn btn-sm btn-primary"><?php t('books.view_details'); ?></a>
                     </div>
                 </div>
             </div>
@@ -103,9 +116,9 @@
                     <div class="card-body">
                         <h5 class="card-title">To Kill a Mockingbird</h5>
                         <p class="card-text text-muted">Harper Lee</p>
-                        <p class="card-text small"><strong>Published:</strong> 1960</p>
+                        <p class="card-text small"><strong><?php t('books.published'); ?>:</strong> 1960</p>
                         <p class="card-text">A gripping tale of racial injustice and childhood innocence.</p>
-                        <a href="/books" class="btn btn-sm btn-primary">View Details</a>
+                        <a href="/books" class="btn btn-sm btn-primary"><?php t('books.view_details'); ?></a>
                     </div>
                 </div>
             </div>
@@ -114,16 +127,16 @@
                     <div class="card-body">
                         <h5 class="card-title">The Great Gatsby</h5>
                         <p class="card-text text-muted">F. Scott Fitzgerald</p>
-                        <p class="card-text small"><strong>Published:</strong> 1925</p>
+                        <p class="card-text small"><strong><?php t('books.published'); ?>:</strong> 1925</p>
                         <p class="card-text">A masterpiece depicting the Jazz Age and American Dream.</p>
-                        <a href="/books" class="btn btn-sm btn-primary">View Details</a>
+                        <a href="/books" class="btn btn-sm btn-primary"><?php t('books.view_details'); ?></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="text-center mt-4">
             <a href="/books" class="btn btn-lg btn-outline-primary">
-                <i class="fas fa-library me-2"></i>View All Books
+                <i class="fas fa-library me-2"></i><?php t('home.view_all_books'); ?>
             </a>
         </div>
     </div>
@@ -132,8 +145,8 @@
 <!-- CTA Section -->
 <section class="py-5" style="background: linear-gradient(135deg, #dda15e 0%, #bc6c25 100%);">
     <div class="container text-center text-white">
-        <h2 class="mb-4">Ready to Get Started?</h2>
-        <p class="lead mb-4">Join our community and manage your library efficiently</p>
+        <h2 class="mb-4"><?php t('home.ready_to_start'); ?></h2>
+        <p class="lead mb-4"><?php t('home.join_community'); ?></p>
         <a href="/contact" class="btn btn-light btn-lg me-2">
             <i class="fas fa-envelope me-2"></i>Contact Us
         </a>

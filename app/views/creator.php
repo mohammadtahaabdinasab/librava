@@ -6,8 +6,8 @@
 <!-- Page Header -->
 <section class="py-5" style="background: linear-gradient(135deg, #606c38 0%, #283618 100%);">
     <div class="container">
-        <h1 class="text-white display-4 fw-bold">Meet The Creator</h1>
-        <p class="text-light lead">The visionary behind Librava</p>
+        <h1 class="text-white display-4 fw-bold"><?php t('creator.title'); ?></h1>
+        <p class="text-light lead"><?php t('creator.subtitle'); ?></p>
     </div>
 </section>
 
@@ -37,13 +37,13 @@
             </div>
 
             <div class="col-lg-8">
-                <h4 class="mb-4">About Mohammad Taha</h4>
+                <h4 class="mb-4"><?php t('creator.about'); ?></h4>
                 <p>
                     Mohammad Taha is a passionate full-stack developer with over 10 years of experience in web application development. 
                     He specializes in building scalable, secure, and user-friendly solutions for complex problems.
                 </p>
                 
-                <h5 class="mt-4 mb-3">Skills & Expertise</h5>
+                <h5 class="mt-4 mb-3"><?php t('creator.skills'); ?></h5>
                 <div class="skill-tags mb-4">
                     <span class="badge bg-primary me-2 mb-2">PHP 8+</span>
                     <span class="badge bg-primary me-2 mb-2">JavaScript</span>
@@ -57,7 +57,7 @@
                     <span class="badge bg-primary me-2 mb-2">Docker</span>
                 </div>
 
-                <h5 class="mt-4 mb-3">Journey to Librava</h5>
+                <h5 class="mt-4 mb-3"><?php t('creator.journey'); ?></h5>
                 <p>
                     The idea for Librava came from observing inefficiencies in traditional library management systems. 
                     Mohammad saw an opportunity to create a modern, multilingual, and API-driven solution that would serve 
@@ -72,13 +72,13 @@
 <!-- Team & Contributors -->
 <section class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5">The Team Behind Librava</h2>
+        <h2 class="text-center mb-5"><?php t('creator.team'); ?></h2>
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body text-center">
                         <i class="fas fa-code fa-4x mb-3" style="color: #606c38;"></i>
-                        <h5 class="card-title">Development</h5>
+                        <h5 class="card-title"><?php t('creator.development'); ?></h5>
                         <p class="card-text">
                             Building robust backend systems and APIs that power Librava's functionality.
                         </p>
@@ -90,7 +90,7 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body text-center">
                         <i class="fas fa-palette fa-4x mb-3" style="color: #606c38;"></i>
-                        <h5 class="card-title">Design</h5>
+                        <h5 class="card-title"><?php t('creator.design'); ?></h5>
                         <p class="card-text">
                             Creating intuitive interfaces with beautiful, responsive designs that work everywhere.
                         </p>
@@ -102,7 +102,7 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body text-center">
                         <i class="fas fa-flask fa-4x mb-3" style="color: #606c38;"></i>
-                        <h5 class="card-title">Quality Assurance</h5>
+                        <h5 class="card-title"><?php t('creator.qa'); ?></h5>
                         <p class="card-text">
                             Ensuring Librava is reliable, performant, and secure through rigorous testing.
                         </p>
@@ -114,7 +114,7 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body text-center">
                         <i class="fas fa-book fa-4x mb-3" style="color: #606c38;"></i>
-                        <h5 class="card-title">Documentation</h5>
+                        <h5 class="card-title"><?php t('creator.documentation'); ?></h5>
                         <p class="card-text">
                             Writing comprehensive guides and API documentation for developers and users.
                         </p>
@@ -126,7 +126,7 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body text-center">
                         <i class="fas fa-users fa-4x mb-3" style="color: #606c38;"></i>
-                        <h5 class="card-title">Community</h5>
+                        <h5 class="card-title"><?php t('creator.community'); ?></h5>
                         <p class="card-text">
                             Supporting users, gathering feedback, and building a thriving community around Librava.
                         </p>
@@ -138,7 +138,7 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body text-center">
                         <i class="fas fa-rocket fa-4x mb-3" style="color: #606c38;"></i>
-                        <h5 class="card-title">Innovation</h5>
+                        <h5 class="card-title"><?php t('creator.innovation'); ?></h5>
                         <p class="card-text">
                             Constantly exploring new features and improvements to keep Librava cutting-edge.
                         </p>
@@ -228,7 +228,7 @@
 <!-- Contact -->
 <section class="py-5">
     <div class="container text-center">
-        <h2 class="mb-4">Get In Touch</h2>
+        <h2 class="mb-4"><?php t('creator.get_in_touch'); ?></h2>
         <p class="lead mb-4">Have questions or ideas? We'd love to hear from you!</p>
         <a href="/contact" class="btn btn-primary btn-lg me-2">
             <i class="fas fa-envelope me-2"></i>Contact Us

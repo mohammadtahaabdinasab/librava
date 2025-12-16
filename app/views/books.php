@@ -6,8 +6,8 @@
 <!-- Page Header -->
 <section class="py-5" style="background: linear-gradient(135deg, #606c38 0%, #283618 100%);">
     <div class="container">
-        <h1 class="text-white display-4 fw-bold">📚 Our Library</h1>
-        <p class="text-light lead">Browse our extensive collection of books</p>
+        <h1 class="text-white display-4 fw-bold">📚 <?php t('books.title'); ?></h1>
+        <p class="text-light lead"><?php t('books.subtitle'); ?></p>
     </div>
 </section>
 
@@ -18,12 +18,12 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-search"></i></span>
-                    <input type="text" class="form-control" id="searchInput" placeholder="Search by title or author...">
+                    <input type="text" class="form-control" id="searchInput" placeholder="<?php t('books.search_placeholder'); ?>">
                 </div>
             </div>
             <div class="col-md-3">
                 <select class="form-select" id="yearFilter">
-                    <option value="">All Years</option>
+                    <option value=""><?php t('books.all_years'); ?></option>
                     <option value="1900-1950">1900-1950</option>
                     <option value="1950-2000">1950-2000</option>
                     <option value="2000-2025">2000-2025</option>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-3">
                 <button type="submit" class="btn btn-primary w-100">
-                    <i class="fas fa-search me-2"></i>Search
+                    <i class="fas fa-search me-2"></i><?php t('books.search_btn'); ?>
                 </button>
             </div>
         </form>
@@ -50,8 +50,8 @@
                             <i class="fas fa-book fa-4x" style="color: #606c38;"></i>
                         </div>
                         <h5 class="card-title">1984</h5>
-                        <p class="card-text text-muted"><strong>Author:</strong> George Orwell</p>
-                        <p class="card-text text-muted"><strong>Year:</strong> 1949</p>
+                        <p class="card-text text-muted"><strong><?php t('books.author'); ?>:</strong> George Orwell</p>
+                        <p class="card-text text-muted"><strong><?php t('books.published'); ?>:</strong> 1949</p>
                         <p class="card-text">
                             Dystopian novel exploring themes of totalitarianism, surveillance, and control in a bleak future society.
                         </p>
@@ -66,7 +66,7 @@
                             <small class="text-muted">(4.5/5)</small>
                         </div>
                         <button class="btn btn-sm btn-primary w-100">
-                            <i class="fas fa-info-circle me-2"></i>View Details
+                            <i class="fas fa-info-circle me-2"></i><?php t('books.view_details'); ?>
                         </button>
                     </div>
                 </div>
@@ -79,8 +79,8 @@
                             <i class="fas fa-book fa-4x" style="color: #606c38;"></i>
                         </div>
                         <h5 class="card-title">To Kill a Mockingbird</h5>
-                        <p class="card-text text-muted"><strong>Author:</strong> Harper Lee</p>
-                        <p class="card-text text-muted"><strong>Year:</strong> 1960</p>
+                        <p class="card-text text-muted"><strong><?php t('books.author'); ?>:</strong> Harper Lee</p>
+                        <p class="card-text text-muted"><strong><?php t('books.published'); ?>:</strong> 1960</p>
                         <p class="card-text">
                             A gripping tale of racial injustice, moral growth, and childhood innocence in the American South.
                         </p>
@@ -95,7 +95,7 @@
                             <small class="text-muted">(5/5)</small>
                         </div>
                         <button class="btn btn-sm btn-primary w-100">
-                            <i class="fas fa-info-circle me-2"></i>View Details
+                            <i class="fas fa-info-circle me-2"></i><?php t('books.view_details'); ?>
                         </button>
                     </div>
                 </div>
@@ -153,14 +153,14 @@
 <!-- Categories Section -->
 <section class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5">Popular Categories</h2>
+        <h2 class="text-center mb-5"><?php t('books.popular_categories'); ?></h2>
         <div class="row g-3">
             <div class="col-md-4 col-lg-2">
                 <a href="#" class="category-btn text-decoration-none text-center">
                     <div class="category-icon mb-2">
                         <i class="fas fa-globe fa-2x" style="color: #606c38;"></i>
                     </div>
-                    <h6>Fiction</h6>
+                    <h6><?php t('books.fiction'); ?></h6>
                 </a>
             </div>
             <div class="col-md-4 col-lg-2">
@@ -168,7 +168,7 @@
                     <div class="category-icon mb-2">
                         <i class="fas fa-flask fa-2x" style="color: #606c38;"></i>
                     </div>
-                    <h6>Science</h6>
+                    <h6><?php t('books.science'); ?></h6>
                 </a>
             </div>
             <div class="col-md-4 col-lg-2">
@@ -176,7 +176,7 @@
                     <div class="category-icon mb-2">
                         <i class="fas fa-graduation-cap fa-2x" style="color: #606c38;"></i>
                     </div>
-                    <h6>Education</h6>
+                    <h6><?php t('books.education'); ?></h6>
                 </a>
             </div>
             <div class="col-md-4 col-lg-2">
@@ -184,7 +184,7 @@
                     <div class="category-icon mb-2">
                         <i class="fas fa-heart fa-2x" style="color: #606c38;"></i>
                     </div>
-                    <h6>Romance</h6>
+                    <h6><?php t('books.romance'); ?></h6>
                 </a>
             </div>
             <div class="col-md-4 col-lg-2">
@@ -192,7 +192,7 @@
                     <div class="category-icon mb-2">
                         <i class="fas fa-book fa-2x" style="color: #606c38;"></i>
                     </div>
-                    <h6>History</h6>
+                    <h6><?php t('books.history'); ?></h6>
                 </a>
             </div>
             <div class="col-md-4 col-lg-2">
@@ -200,7 +200,7 @@
                     <div class="category-icon mb-2">
                         <i class="fas fa-lightbulb fa-2x" style="color: #606c38;"></i>
                     </div>
-                    <h6>Self-Help</h6>
+                    <h6><?php t('books.self_help'); ?></h6>
                 </a>
             </div>
         </div>
