@@ -91,10 +91,10 @@
                 <div class="col-md-4 mb-3">
                     <h6><?php t('footer.follow'); ?></h6>
                     <div class="footer-text small">
-                        <a href="#" class="footer-link text-decoration-none me-3"><i class="fab fa-github"></i></a>
-                        <a href="#" class="footer-link text-decoration-none me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-link text-decoration-none me-3"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="footer-link text-decoration-none"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" href="https://github.com/mohammadtahaabdinasab/librava" class="footer-link text-decoration-none me-3"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="#" class="footer-link text-decoration-none me-3"><i class="fab fa-twitter"></i></a>
+                        <a target="_blank" href="#" class="footer-link text-decoration-none me-3"><i class="fab fa-linkedin"></i></a>
+                        <a target="_blank" href="#" class="footer-link text-decoration-none"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>

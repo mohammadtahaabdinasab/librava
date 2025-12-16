@@ -58,7 +58,7 @@
                         <i class="fas fa-map-marker-alt fa-2x mb-3" style="color: #dda15e;"></i>
                         <h6><?php t('contact.address'); ?></h6>
                         <p class="text-muted">
-                            Tehran, Iran<br>
+                            Kerman, Iran<br>
                             Library Management Division
                         </p>
                     </div>
@@ -96,15 +96,15 @@
                 <div class="card mt-4">
                     <div class="card-body text-center">
                         <h6 class="card-title mb-3">Follow Us</h6>
-                        <a href="#" class="btn btn-sm btn-outline-primary me-2">
+                        <a href="https://github.com/mohammadtahaabdinasab/librava" class="btn btn-sm btn-outline-primary me-2">
                             <i class="fab fa-github"></i> GitHub
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-info me-2">
+                        <!-- <a href="#" class="btn btn-sm btn-outline-info me-2">
                             <i class="fab fa-twitter"></i> Twitter
                         </a>
                         <a href="#" class="btn btn-sm btn-outline-danger">
                             <i class="fab fa-instagram"></i> Instagram
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>

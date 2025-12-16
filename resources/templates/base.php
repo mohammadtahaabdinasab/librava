@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <button id="backBtn" class="btn btn-sm btn-outline-light me-2" title="Back">←</button>
-            <a class="navbar-brand" href="/">📚 Librava</a>
+            <a class="navbar-brand" href="/">Librava</a>
             <span class="navbar-text text-light">Library Management System</span>
             <button id="settingsToggle" class="btn btn-sm btn-outline-light ms-auto" aria-label="Settings">⚙︎</button>
         </div>

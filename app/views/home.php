@@ -6,7 +6,7 @@
 <!-- Hero Section -->
 <section class="hero-section py-5" style="background: linear-gradient(135deg, #606c38 0%, #283618 100%);">
     <div class="container text-center text-white py-5">
-        <h1 class="display-3 fw-bold mb-3">📚 <?php t('home.title'); ?></h1>
+        <h1 class="display-3 fw-bold mb-3"><?php t('home.title'); ?></h1>
         <p class="lead mb-4"><?php t('home.subtitle'); ?></p>
         <a href="/books" class="btn btn-primary btn-lg me-2">
             <i class="fas fa-book me-2"></i><?php t('home.browse_books'); ?>
@@ -20,7 +20,7 @@
 <!-- Features Section -->
 <section id="features" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-5">✨ <?php t('home.features'); ?></h2>
+        <h2 class="text-center mb-5"><?php t('home.features'); ?></h2>
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 feature-card">
@@ -85,7 +85,7 @@
 <!-- Recent Books Section -->
 <section class="py-5">
     <div class="container">
-        <h2 class="mb-5">📖 <?php t('home.featured_books'); ?></h2>
+        <h2 class="mb-5"><?php t('home.featured_books'); ?></h2>
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm book-card">

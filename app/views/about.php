@@ -124,7 +124,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
+            <!-- <div class="col-md-6 col-lg-3">
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="mb-3">
@@ -159,7 +159,7 @@
                         <p class="card-text small">Help us build better library tools</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

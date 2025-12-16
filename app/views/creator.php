@@ -17,7 +17,7 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-4 text-center">
                 <div class="creator-avatar mb-4">
-                    <i class="fas fa-user-circle fa-10x" style="color: #606c38;"></i>
+                    <img src="https://avatars.githubusercontent.com/u/188295997?v=4" alt="Creator Avatar" class="rounded-circle shadow-lg" width="200" height="200">
                 </div>
                 <h3>Mohammad Taha Abdinasab</h3>
                 <p class="lead text-muted"><?php t('creator.role'); ?></p>

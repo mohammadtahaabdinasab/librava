@@ -6,7 +6,7 @@
 <!-- Page Header -->
 <section class="py-5" style="background: linear-gradient(135deg, #606c38 0%, #283618 100%);">
     <div class="container">
-        <h1 class="text-white display-4 fw-bold">📚 <?php t('books.title'); ?></h1>
+        <h1 class="text-white display-4 fw-bold"><?php t('books.title'); ?></h1>
         <p class="text-light lead"><?php t('books.subtitle'); ?></p>
     </div>
 </section>
