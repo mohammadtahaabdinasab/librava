@@ -1,11 +1,10 @@
 <?php
-
-// SQLite database configuration for local development
-// Database file is stored in storage/ directory
-$dbPath = __DIR__ . '/../storage/librava.db';
+use Core\Env;
 
 return [
-    'driver' => env('DB_DRIVER', 'sqlite'),
-    'path'   => $dbPath,
-    'dsn'    => 'sqlite:' . $dbPath,
+    'host' => Env::get('DB_HOST', 'localhost'),
+    'name' => Env::get('DB_NAME', 'librava'),
+    'user' => Env::get('DB_USER', 'root'),
+    'pass' => Env::get('DB_PASS', ''),
+    'charset' => 'utf8mb4',
 ];

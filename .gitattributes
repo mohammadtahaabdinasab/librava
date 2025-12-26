@@ -1,5 +1,0 @@
-# Ensure consistent line endings
-* text=auto
-
-# PHP files
-*.php text eol=lf

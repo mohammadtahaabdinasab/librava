@@ -1,18 +1,14 @@
 <?php
-
 namespace App\Controllers;
 
-use Core\Controller;
+use Core\View;
 
-class HomeController extends Controller
+class HomeController
 {
-    public function index()
+    public function index(): string
     {
-        $data = [
-            'title' => 'Librava - Modern Library Management System',
-            'description' => 'The modern multilingual library management system with REST API',
-            'keywords' => 'library, books, management, system',
-        ];
-        $this->renderWithLayout('home', $data);
+        return View::render('pages/home', [
+            'title' => 'خانه',
+        ]);
     }
 }

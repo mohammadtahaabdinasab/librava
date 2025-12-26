@@ -1,79 +1,115 @@
 <?php
-
 namespace Core;
 
 class Router
 {
-    protected static $routes = [];
+    private array $routes = [];
+    private array $compiled = [];
 
-    public static function add(string $method, string $path, $handler)
+    public function get(string $path, string $handler): void
     {
-        self::$routes[] = compact('method', 'path', 'handler');
+        $this->add('GET', $path, $handler);
     }
 
-    public static function dispatch()
+    public function post(string $path, string $handler): void
     {
-        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        $uri = rtrim($uri, '/') ?: '/';
-        $method = $_SERVER['REQUEST_METHOD'];
-
-        foreach (self::$routes as $route) {
-            $match = self::matchRoute($route['path'], $uri);
-            
-            if ($route['method'] === $method && $match['matched']) {
-                $handler = $route['handler'];
-                if (is_callable($handler)) {
-                    // Pass parameters if route has dynamic segments
-                    if (!empty($match['params'])) {
-                        return call_user_func($handler, $match['params']);
-                    }
-                    return call_user_func($handler);
-                }
-            }
-        }
-
-        // Route not found - return 404 API response
-        // Check if it's an API route (starts with /api)
-        if (strpos($uri, '/api') === 0) {
-            Api::error('Route not found', Api::HTTP_NOT_FOUND);
-        } else {
-            // Web routes
-            http_response_code(404);
-            echo 'Not Found';
-        }
+        $this->add('POST', $path, $handler);
     }
 
-    /**
-     * Match route pattern with URI
-     * Converts /api/books/:id to regex pattern
-     */
-    private static function matchRoute($pattern, $uri)
+    public function put(string $path, string $handler): void
     {
-        $params = [];
-        
-        // Convert route pattern to regex
-        $regex = preg_replace_callback('/:([a-zA-Z_]+)/', function ($matches) use (&$params) {
-            $params[$matches[1]] = null;
-            return '([a-zA-Z0-9_-]+)';
-        }, $pattern);
+        $this->add('PUT', $path, $handler);
+    }
 
+    public function delete(string $path, string $handler): void
+    {
+        $this->add('DELETE', $path, $handler);
+    }
+
+    private function add(string $method, string $path, string $handler): void
+    {
+        $path = $this->normalize($path);
+        $this->routes[$method][$path] = $handler;
+
+        $regex = preg_replace('#\{([a-zA-Z_][a-zA-Z0-9_]*)\}#', '(?P<$1>[^/]+)', $path);
         $regex = '#^' . $regex . '$#';
 
-        if (preg_match($regex, $uri, $matches)) {
-            // Extract matched parameters
-            array_shift($matches); // Remove full match
-            $paramNames = array_keys($params);
-            
-            foreach ($matches as $index => $value) {
-                if (isset($paramNames[$index])) {
-                    $params[$paramNames[$index]] = $value;
-                }
-            }
+        $this->compiled[$method][] = [
+            'path' => $path,
+            'regex' => $regex,
+            'handler' => $handler,
+        ];
+    }
 
-            return ['matched' => true, 'params' => $params];
+    private function normalize(string $path): string
+    {
+        $path = '/' . trim($path, '/');
+        return $path === '/' ? '/' : rtrim($path, '/');
+    }
+
+    public function dispatch(): void
+    {
+        $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+        $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
+        $uri = $this->normalize($uri);
+
+        $match = $this->match($method, $uri);
+
+        if (!$match) {
+            http_response_code(404);
+            echo "404 - Route not found";
+            return;
         }
 
-        return ['matched' => false, 'params' => []];
+        [$handler, $params] = $match;
+
+        [$controller, $action] = explode('@', $handler);
+
+        $class = "App\\Controllers\\{$controller}";
+        $file = BASE_PATH . "/app/Controllers/{$controller}.php";
+
+        if (!is_file($file)) {
+            http_response_code(500);
+            echo "Controller file not found";
+            return;
+        }
+
+        require_once $file;
+
+        if (!class_exists($class)) {
+            http_response_code(500);
+            echo "Controller class not found";
+            return;
+        }
+
+        $obj = new $class();
+
+        if (!method_exists($obj, $action)) {
+            http_response_code(500);
+            echo "Action not found";
+            return;
+        }
+
+        echo $obj->$action($params);
+    }
+
+    private function match(string $method, string $uri): ?array
+    {
+        $handler = $this->routes[$method][$uri] ?? null;
+        if ($handler) {
+            return [$handler, []];
+        }
+
+        foreach ($this->compiled[$method] ?? [] as $r) {
+            if (preg_match($r['regex'], $uri, $m)) {
+                $params = [];
+                foreach ($m as $k => $v) {
+                    if (!is_int($k)) $params[$k] = $v;
+                }
+                return [$r['handler'], $params];
+            }
+        }
+
+        return null;
     }
 }
-

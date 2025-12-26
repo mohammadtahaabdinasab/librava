@@ -1,7 +1,9 @@
 <?php
+use Core\Env;
 
 return [
-    'env' => env('APP_ENV', 'production'),
-    'debug' => env('APP_DEBUG', false),
-    'default_lang' => env('DEFAULT_LANG', 'en'),
+    'name' => 'Librava',
+    'env' => Env::get('APP_ENV', 'production'),
+    'debug' => Env::bool('APP_DEBUG', false),
+    'default_lang' => Env::get('DEFAULT_LANG', 'en'),
 ];

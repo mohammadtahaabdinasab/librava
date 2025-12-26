@@ -1,28 +1,16 @@
 <?php
+/** @var \Core\Router $router */
 
-use Core\Router;
-use App\Controllers\Api\BookController;
-use App\Controllers\Api\AuthController;
-use App\Controllers\Api\UserController;
+$router->get('/api/ping', 'Api\\PingController@index');
 
-// ==================== Authentication Routes ====================
-Router::add('POST', '/api/auth/register', fn() => AuthController::register());
-Router::add('POST', '/api/auth/login', fn() => AuthController::login());
-Router::add('GET', '/api/auth/me', fn() => AuthController::me());
-Router::add('POST', '/api/auth/logout', fn() => AuthController::logout());
-Router::add('POST', '/api/auth/refresh', fn() => AuthController::refresh());
+$router->get('/api/books', 'Api\\BooksController@index');
+$router->get('/api/books/{id}', 'Api\\BooksController@show');
+$router->post('/api/books', 'Api\\BooksController@store');
+$router->put('/api/books/{id}', 'Api\\BooksController@update');
+$router->delete('/api/books/{id}', 'Api\\BooksController@delete');
 
-// ==================== Book Routes ====================
-Router::add('GET', '/api/books', fn() => BookController::list());
-Router::add('GET', '/api/books/:id', fn($params) => BookController::show($params['id']));
-Router::add('POST', '/api/books', fn() => BookController::store());
-Router::add('PUT', '/api/books/:id', fn($params) => BookController::update($params['id']));
-Router::add('DELETE', '/api/books/:id', fn($params) => BookController::delete($params['id']));
-
-// ==================== Admin Routes ====================
-Router::add('GET', '/api/admin/users', fn() => UserController::list());
-Router::add('GET', '/api/admin/users/:id', fn($params) => UserController::show($params['id']));
-Router::add('PUT', '/api/admin/users/:id', fn($params) => UserController::update($params['id']));
-Router::add('DELETE', '/api/admin/users/:id', fn($params) => UserController::delete($params['id']));
-Router::add('GET', '/api/admin/dashboard', fn() => UserController::dashboard());
-
+$router->get('/api/borrows', 'Api\\BorrowsController@index');
+$router->get('/api/borrows/{id}', 'Api\\BorrowsController@show');
+$router->post('/api/borrows', 'Api\\BorrowsController@store');
+$router->post('/api/borrows/{id}/return', 'Api\\BorrowsController@returnBorrow');
+$router->post('/api/borrows/{id}/renew', 'Api\\BorrowsController@renew');
